@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --container-bg: white;
+    --text-color: #2c3e50;
+    --label-color: #34495e;
+    --input-border: #e0e0e0;
+    --input-focus: #3498db;
+    --swap-btn-bg: #3498db;
+    --convert-btn-bg: #2ecc71;
+    --convert-btn-hover: #27ae60;
+    --result-box-bg: #f8f9fa;
+    --result-text: #7f8c8d;
+    --update-time: #95a5a6;
+}
+
+[data-theme="dark"] {
+    --bg-color: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+    --container-bg: #2c3e50;
+    --text-color: #ecf0f1;
+    --label-color: #bdc3c7;
+    --input-border: #34495e;
+    --input-focus: #3498db;
+    --swap-btn-bg: #3498db;
+    --convert-btn-bg: #2ecc71;
+    --convert-btn-hover: #27ae60;
+    --result-box-bg: #34495e;
+    --result-text: #bdc3c7;
+    --update-time: #95a5a6;
+}
+
+body {
+    background: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#theme-toggle-btn {
+    background: var(--container-bg);
+    color: var(--text-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    background: var(--container-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    transition: background 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.converter-box {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.amount-box, .from-box, .to-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    color: var(--label-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+input, select {
+    padding: 12px;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: var(--container-bg);
+    color: var(--text-color);
+}
+
+input:focus, select:focus {
+    border-color: var(--input-focus);
+    outline: none;
+}
+
+.swap-btn {
+    background: var(--swap-btn-bg);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg);
+}
+
+.convert-btn {
+    background: var(--convert-btn-bg);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.convert-btn:hover {
+    background: var(--convert-btn-hover);
+}
+
+.result-box {
+    background: var(--result-box-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.result-box p {
+    color: var(--result-text);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+#result {
+    color: var(--text-color);
+    font-size: 2em;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.update-time {
+    color: var(--update-time);
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+select option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+select option i {
+    margin-right: 8px;
+    color: #3498db;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    input, select {
+        font-size: 0.9em;
+    }
+    
+    #result {
+        font-size: 1.5em;
+    }
+}
+
+.navigation {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--swap-btn-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--convert-btn-bg);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .nav-btn {
+    background: var(--swap-btn-bg);
+}
+
+[data-theme="dark"] .nav-btn:hover {
+    background: var(--convert-btn-bg);
+}
+
+.date-container {
+    margin-top: 10px;
+}
+
+.hijri-date {
+    text-align: center;
+}
+
+.date-value {
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+@media (max-width: 480px) {
+    .date-value {
+        font-size: 0.9em;
+    }
+} 

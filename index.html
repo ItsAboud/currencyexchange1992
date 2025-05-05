@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسعار تصريف العملات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    <div class="container">
+        <h1>اسعار تصريف العملات</h1>
+        
+        <div class="converter-box">
+            <div class="amount-box">
+                <label for="amount">المبلغ</label>
+                <input type="number" id="amount" placeholder="أدخل المبلغ">
+            </div>
+            
+            <div class="from-box">
+                <label for="from-currency">من</label>
+                <select id="from-currency">
+                    <option value="USD"><i class="fas fa-dollar-sign"></i> دولار أمريكي (USD)</option>
+                    <option value="EUR"><i class="fas fa-euro-sign"></i> يورو (EUR)</option>
+                    <option value="GBP"><i class="fas fa-pound-sign"></i> جنيه إسترليني (GBP)</option>
+                    <option value="SAR"><i class="fas fa-riyal-sign"></i> ريال سعودي (SAR)</option>
+                    <option value="AED"><i class="fas fa-dirham-sign"></i> درهم إماراتي (AED)</option>
+                    <option value="KWD"><i class="fas fa-dinar-sign"></i> دينار كويتي (KWD)</option>
+                    <option value="QAR"><i class="fas fa-riyal-sign"></i> ريال قطري (QAR)</option>
+                    <option value="BHD"><i class="fas fa-dinar-sign"></i> دينار بحريني (BHD)</option>
+                    <option value="OMR"><i class="fas fa-riyal-sign"></i> ريال عماني (OMR)</option>
+                    <option value="JOD"><i class="fas fa-dinar-sign"></i> دينار أردني (JOD)</option>
+                    <option value="EGP"><i class="fas fa-pound-sign"></i> جنيه مصري (EGP)</option>
+                    <option value="MAD"><i class="fas fa-dirham-sign"></i> درهم مغربي (MAD)</option>
+                    <option value="TND"><i class="fas fa-dinar-sign"></i> دينار تونسي (TND)</option>
+                    <option value="DZD"><i class="fas fa-dinar-sign"></i> دينار جزائري (DZD)</option>
+                    <option value="LYD"><i class="fas fa-dinar-sign"></i> دينار ليبي (LYD)</option>
+                    <option value="SDG"><i class="fas fa-pound-sign"></i> جنيه سوداني (SDG)</option>
+                    <option value="YER"><i class="fas fa-riyal-sign"></i> ريال يمني (YER)</option>
+                    <option value="SYP"><i class="fas fa-lira-sign"></i> ليرة سورية (SYP)</option>
+                    <option value="LBP"><i class="fas fa-lira-sign"></i> ليرة لبنانية (LBP)</option>
+                    <option value="IQD"><i class="fas fa-dinar-sign"></i> دينار عراقي (IQD)</option>
+                    <option value="MRU"><i class="fas fa-ouguiya-sign"></i> أوقية موريتانية (MRU)</option>
+                    <option value="DJF"><i class="fas fa-franc-sign"></i> فرنك جيبوتي (DJF)</option>
+                    <option value="SOS"><i class="fas fa-shilling-sign"></i> شلن صومالي (SOS)</option>
+                    <option value="KMF"><i class="fas fa-franc-sign"></i> فرنك جزر القمر (KMF)</option>
+                    <option value="MRO"><i class="fas fa-ouguiya-sign"></i> أوقية موريتانية (MRO)</option>
+                </select>
+            </div>
+            
+            <div class="swap-btn">⇅</div>
+            
+            <div class="to-box">
+                <label for="to-currency">إلى</label>
+                <select id="to-currency">
+                    <option value="USD"><i class="fas fa-dollar-sign"></i> دولار أمريكي (USD)</option>
+                    <option value="EUR"><i class="fas fa-euro-sign"></i> يورو (EUR)</option>
+                    <option value="GBP"><i class="fas fa-pound-sign"></i> جنيه إسترليني (GBP)</option>
+                    <option value="SAR"><i class="fas fa-riyal-sign"></i> ريال سعودي (SAR)</option>
+                    <option value="AED"><i class="fas fa-dirham-sign"></i> درهم إماراتي (AED)</option>
+                    <option value="KWD"><i class="fas fa-dinar-sign"></i> دينار كويتي (KWD)</option>
+                    <option value="QAR"><i class="fas fa-riyal-sign"></i> ريال قطري (QAR)</option>
+                    <option value="BHD"><i class="fas fa-dinar-sign"></i> دينار بحريني (BHD)</option>
+                    <option value="OMR"><i class="fas fa-riyal-sign"></i> ريال عماني (OMR)</option>
+                    <option value="JOD"><i class="fas fa-dinar-sign"></i> دينار أردني (JOD)</option>
+                    <option value="EGP"><i class="fas fa-pound-sign"></i> جنيه مصري (EGP)</option>
+                    <option value="MAD"><i class="fas fa-dirham-sign"></i> درهم مغربي (MAD)</option>
+                    <option value="TND"><i class="fas fa-dinar-sign"></i> دينار تونسي (TND)</option>
+                    <option value="DZD"><i class="fas fa-dinar-sign"></i> دينار جزائري (DZD)</option>
+                    <option value="LYD"><i class="fas fa-dinar-sign"></i> دينار ليبي (LYD)</option>
+                    <option value="SDG"><i class="fas fa-pound-sign"></i> جنيه سوداني (SDG)</option>
+                    <option value="YER"><i class="fas fa-riyal-sign"></i> ريال يمني (YER)</option>
+                    <option value="SYP"><i class="fas fa-lira-sign"></i> ليرة سورية (SYP)</option>
+                    <option value="LBP"><i class="fas fa-lira-sign"></i> ليرة لبنانية (LBP)</option>
+                    <option value="IQD"><i class="fas fa-dinar-sign"></i> دينار عراقي (IQD)</option>
+                    <option value="MRU"><i class="fas fa-ouguiya-sign"></i> أوقية موريتانية (MRU)</option>
+                    <option value="DJF"><i class="fas fa-franc-sign"></i> فرنك جيبوتي (DJF)</option>
+                    <option value="SOS"><i class="fas fa-shilling-sign"></i> شلن صومالي (SOS)</option>
+                    <option value="KMF"><i class="fas fa-franc-sign"></i> فرنك جزر القمر (KMF)</option>
+                    <option value="MRO"><i class="fas fa-ouguiya-sign"></i> أوقية موريتانية (MRO)</option>
+                </select>
+            </div>
+            
+            <button class="convert-btn">تحويل</button>
+        </div>
+        
+        <div class="result-box">
+            <p>النتيجة:</p>
+            <h2 id="result">0.00</h2>
+            <p class="update-time">آخر تحديث: <span id="last-update"></span></p>
+        </div>
+
+        <div class="navigation">
+            <a href="precious-metals.html" class="nav-btn">الانتقال إلى أسعار الذهب والفضة</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
