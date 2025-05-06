@@ -6,6 +6,7 @@
     <title>اسعار تصريف العملات</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="theme-toggle">
@@ -93,6 +94,9 @@
             <p>النتيجة:</p>
             <h2 id="result">0.00</h2>
             <p class="update-time">آخر تحديث: <span id="last-update"></span></p>
+            <div class="chart-container">
+                <canvas id="trendChart"></canvas>
+            </div>
         </div>
 
         <div class="navigation">
