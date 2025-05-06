@@ -248,15 +248,64 @@ select option i {
 
 .hijri-date {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .date-value {
     color: var(--text-color);
-    font-size: 1em;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.time-value {
+    color: var(--result-text);
+    font-size: 0.9em;
 }
 
 @media (max-width: 480px) {
     .date-value {
-        font-size: 0.9em;
+        font-size: 1em;
     }
+    
+    .time-value {
+        font-size: 0.8em;
+    }
+}
+
+.refresh-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.refresh-btn i {
+    font-size: 1.1rem;
+}
+
+.chart-container {
+    margin-top: 20px;
+    padding: 10px;
+    background: var(--container-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .chart-container {
+    background: var(--result-box-bg);
 } 
