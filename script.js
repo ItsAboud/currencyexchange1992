@@ -215,20 +215,9 @@ async function convertCurrency() {
                 throw new Error('العملة غير مدعومة');
             }
 
-            // تحديث وقت آخر تحديث
-            const lastUpdateTime = new Date(data.time_last_update_utc);
-            const formattedTime = lastUpdateTime.toLocaleString('ar-SA', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
-            lastUpdateElement.textContent = `آخر تحديث: ${formattedTime}`;
-
             const convertedAmount = (amount * rate).toFixed(2);
             resultElement.textContent = `${convertedAmount} ${to}`;
+            updateTimestamp();
             
             // تحديث الرسم البياني فقط إذا كان السعر مختلفاً
             updateChart(parseFloat(convertedAmount));
